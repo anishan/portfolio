@@ -45,15 +45,51 @@ function fillPortfolio(data)
     projectItem.className = "project_item"
 
     // Create and add the title to the div, as a H2 level
-    var title = document.createElement("H2")
-    projectItem.appendChild(title)
-    var titleText = document.createTextNode(GLOBAL.projects[i]["Title"])
+    // Wrapper div
+    var titleDiv = document.createElement("div")
+    titleDiv.className = "title"
+    // When the title is clicked, toggle the question
+    titleDiv.onclick = function () {
+      var text = this.parentElement.getElementsByClassName("description")[0]
+      string = this.childNodes[0].innerHTML
+      if (text.style.display != 'none')
+      {
+        text.style.display = 'none'
+        // And change the symbol in front of  the title
+        this.childNodes[0].innerHTML = "+" + string.substr(1, string.length)
+      }
+      else
+      {
+        text.style.display = ''
+        this.childNodes[0].innerHTML = "-" + string.substr(1, string.length)
+      }
+    };
+    projectItem.appendChild(titleDiv)
+    // H2 type
+    var title = document.createElement("h2")
+    titleDiv.appendChild(title)
+    // Actual text
+    var titleText = document.createTextNode("+ " + GLOBAL.projects[i]["Title"])
     title.appendChild(titleText);
 
     // Create and add the text to the div
-    var title = document.createElement("p")
-    projectItem.appendChild(title)
-    var titleText = document.createTextNode(GLOBAL.projects[i]["Description"])
-    title.appendChild(titleText);
+    // Wrapper div
+    var descriptionDiv = document.createElement("div")
+    descriptionDiv.className = "description"
+    projectItem.appendChild(descriptionDiv)
+    // p type
+    var description = document.createElement("p")
+    descriptionDiv.appendChild(description)
+    // Actual text
+    var descriptionText = document.createTextNode(GLOBAL.projects[i]["Description"])
+    description.appendChild(descriptionText);
+    // hide the description to start with
+    descriptionDiv.style.display = 'none'
   }
 }
+
+// $(document).ready(function(){
+//     $('.title').click(function(){
+//         $(this).siblings('.description').slideToggle();
+//     });
+// });
