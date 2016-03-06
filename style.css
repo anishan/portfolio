@@ -39,6 +39,16 @@ p {
     color:#753824;
 }
 
+.nav a:link, a:visited {
+	color:#b75838;
+	text-decoration: none;
+	padding: 5px;
+}
+
+.nav a:hover, a:active {
+    background-color: #ff9900;
+}
+
 /*footer {*/
 	/* Align */
 	/*margin: 0; /*cushion on all sides*/
