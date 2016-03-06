@@ -1,0 +1,63 @@
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	text-align: right;
+}
+
+.nav li {
+	display: inline;
+}
+
+
+
+h1 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 2.5em; /*relative size, allows resizing in browser*/
+	margin: 5px 0;
+    color:#39A5B7;
+}
+
+h2 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1.5em; /*relative size, allows resizing in browser*/
+	margin: 5px 0;
+    color:#2a7a89;
+}
+
+h3 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1.25em; /*relative size, allows resizing in browser*/
+	margin: 5px 0;
+    color:#b75838;
+}
+
+p {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1em; /*relative size, allows resizing in browser*/
+	margin: 5px 0;
+    color:#753824;
+}
+
+/*footer {*/
+	/* Align */
+	/*margin: 0; /*cushion on all sides*/
+	/*border: 0; /*1px solid black; /*no border*/
+	/*text-align: center;*/
+
+	/* Push footer to bottom */
+	/*width: 100%;*/
+	/*position: absolute;*/
+	/*bottom: 0;*/
+	/*left: 0;*/
+/*}*/
+
+/*.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}*/

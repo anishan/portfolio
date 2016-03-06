@@ -1,4 +1,5 @@
-var GLOBAL = { projects: []};
+var GLOBAL = { projects: [],
+               projectsFileName: "content/projects.csv"};
 
 function run()
 {
@@ -11,13 +12,11 @@ function update_projects()
   {
     fillPortfolio(data)
   });
-
-
 }
 
 function readCSV(f)
 {
-    d3.csv("projects.csv", function(error, data) {
+    d3.csv(GLOBAL.projectsFileName, function(error, data) {
       if (error)
       {
         //If error is not null, something went wrong.
@@ -44,7 +43,7 @@ function fillPortfolio(data)
     projectElement.appendChild(projectItem)
     projectItem.className = "project_item"
 
-    // Create and add the title to the div, as a H2 level
+    // Create and add the title to the div, as a H3 level
     // Wrapper div
     var titleDiv = document.createElement("div")
     titleDiv.className = "title"
@@ -56,20 +55,21 @@ function fillPortfolio(data)
       {
         text.style.display = 'none'
         // And change the symbol in front of  the title
-        this.childNodes[0].innerHTML = "+" + string.substr(1, string.length)
+        this.childNodes[0].innerHTML = "\u25b8" + string.substr(1, string.length)
       }
       else
       {
         text.style.display = ''
-        this.childNodes[0].innerHTML = "-" + string.substr(1, string.length)
+        // Change the symbol in front of the title
+        this.childNodes[0].innerHTML = "\u25be" + string.substr(1, string.length)
       }
     };
     projectItem.appendChild(titleDiv)
-    // H2 type
-    var title = document.createElement("h2")
+    // H3 type
+    var title = document.createElement("h3")
     titleDiv.appendChild(title)
     // Actual text
-    var titleText = document.createTextNode("+ " + GLOBAL.projects[i]["Title"])
+    var titleText = document.createTextNode("\u25b8 " + GLOBAL.projects[i]["Title"])
     title.appendChild(titleText);
 
     // Create and add the text to the div
