@@ -6,31 +6,33 @@
 	<title>Anisha Nakagawa</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 	<script src="portfolio.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body onload="run()">
-	<!-- HEADER -->
-	<header>
-		<h1>Anisha Nakagawa</h1>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</header>
 
 	<!-- NAVIGATION BAR -->
 	<nav>
 		<div class="nav">
 			<ul>
 				<li><a href="index.html">ABOUT</a></li>
-				<li><a href="portfolio.html">PORTFOLIO</a></li>
+				<li id="selected"><a href="portfolio.html">PORTFOLIO</a></li>
 				<li><a href="resume.html">RESUME</a></li>
 			</ul>
 		</div>
 	</nav>
 
+	<!-- HEADER -->
+	<header>
+		<h1>Portfolio</h1>
+	</header>
+
   <!-- MAIN CONTENT -->
 	<section>
-    <h2>Portfolio</h2>
-		<p>Here's a collection of some of my projects. Click on the tiles to see more details.</p>
-		<div id="project_list">
+		<div class="main-body">
+			<p>Here's a collection of some of my projects. Click on the tiles to see more details.</br></p>
+			<div id="project_list">
+			</div>
 		</div>
 	</section>
 
